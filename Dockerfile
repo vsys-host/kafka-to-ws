@@ -8,3 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY kafka-to-ws.py .
 
 CMD [ "python", "./kafka-to-ws.py" ]
+
