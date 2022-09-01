@@ -20,7 +20,8 @@ async def handler(websocket):
     connected.add(websocket)
     logger.info(f"[{connected.__len__()}] Client connected: {'%s:%d' % websocket.remote_address}")
     consumer = AIOKafkaConsumer(
-        'transaction', 'contractevent',
+        # 'transaction', 'contractevent',
+        'solidityevent',
         bootstrap_servers=os.environ.get('KAFKA_HOST', 'kafka.tron.shkeeper.io'),
         auto_offset_reset="earliest",
         enable_auto_commit=False,
