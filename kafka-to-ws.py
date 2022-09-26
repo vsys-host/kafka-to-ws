@@ -32,7 +32,7 @@ async def handler(websocket):
             logger.debug(f"Consumed: {msg.topic} {msg.key} {msg.value} {msg.timestamp}")
             await websocket.send(msg.value)
     except Exception:
-        pass
+        logger.exception(f"[{connected.__len__()}] Exception while serving client {'%s:%d' % websocket.remote_address}")
     finally:
         await consumer.stop()
         connected.remove(websocket)
