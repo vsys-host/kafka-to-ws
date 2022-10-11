@@ -15,3 +15,5 @@ build/
 *~
 *.db
 celerybeat-schedule
+client.py
+server.py
